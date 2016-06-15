@@ -9,13 +9,13 @@ var app = {
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         // Custom Events
-        document.getElementById("clickMe").addEventListener('touchstart', this.onTouchStart, false);
+        document.getElementById("click-for-app").addEventListener('touchstart', this.onTouchStart, false);
         /*document.getElementById("createFile").addEventListener('touchstart', this.onTouchStart, false);
         document.getElementById("writeFile").addEventListener('touchstart', this.onTouchStart, false);
         document.getElementById("readFile").addEventListener('touchstart', this.onTouchStart, false);
         document.getElementById("removeFile").addEventListener('touchstart', this.onTouchStart, false);*/
 
-        //document.getElementById("search-key").addEventListener('keyup', this.findByName, false);
+        document.getElementById("search-key").addEventListener('keyup', this.findByName, false);
     },
     // deviceready Event Handler
     onDeviceReady: function() {
@@ -25,7 +25,7 @@ var app = {
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         //======Barcode starts
-        cordova.plugins.barcodeScanner.scan(
+        /*cordova.plugins.barcodeScanner.scan(
           function (result) {
               alert("We got a barcode\n" +
                     "Result: " + result.text + "\n" +
@@ -42,18 +42,18 @@ var app = {
               "formats" : "QR_CODE,PDF_417", // default: all but PDF_417 and RSS_EXPANDED
               "orientation" : "landscape" // Android only (portrait|landscape), default unset so it rotates with the device
           }
-        );
+        );*/
         //======Barcode ends
         //======background task starts
-        backgroundtask.start(function() {
+        /*backgroundtask.start(function() {
             setInterval(function(){
                 //alert("Hello, I am here");
             }, 1000);
-        });
+        });*/
         //======background task ends
 
         //alert("test");
-        window.mixpanelanalytics.setUp("d2cf83e0f852eaf2eab1221bffa4ef1f");
+        /*window.mixpanelanalytics.setUp("d2cf83e0f852eaf2eab1221bffa4ef1f");
         window.mixpanelanalytics.trackEvent('Device is Ready already!');
 
         push = PushNotification.init({
@@ -70,7 +70,7 @@ var app = {
 
         push.on('registration', function(data) {
             console.log(data.registrationId);
-        });
+        });*/
 
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -99,7 +99,9 @@ var app = {
         }*/
 
         switch(this.id) {
-            case "clickMe":
+            case "click-for-app":
+                this.style.display = "none";
+                document.getElementById("app-wrapper").style.display = "block";
                 //=====Camera code starts
                 /*var srcType = Camera.PictureSourceType.CAMERA;
                 var options = setOptions(srcType);
@@ -167,8 +169,8 @@ var app = {
 
                 //=====Contacts find and remove ends
 
-                this.innerHTML = "Got Clicked Aswell!";
-                window.mixpanelanalytics.trackEvent('Clicked event');
+                //this.innerHTML = "Got Clicked Aswell!";
+                /*window.mixpanelanalytics.trackEvent('Clicked event');
 
                 push = PushNotification.init({
                     android: {
@@ -184,9 +186,9 @@ var app = {
                 push.on('registration', function(data) {
                     console.log(data.registrationId);
 
-                });
+                });*/
 
-                jQuery.ajax({
+                /*jQuery.ajax({
                     type: 'GET',
                     dataType: 'json',
                     url: "./resources/dummyData.json",
@@ -201,7 +203,7 @@ var app = {
                     error: function(xhr, ajaxOptions, thrownError){
                         alert("error");
                     }
-                });
+                });*/
                 break;
             default:
                 console.log("Default case");
