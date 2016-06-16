@@ -56,7 +56,7 @@ var app = {
         //======Mixpanel ends
 
         //======Push notifications on device ready starts
-        /*push = PushNotification.init({
+        push = PushNotification.init({
             android: {
                 senderID: "362087841156"
             },
@@ -70,7 +70,7 @@ var app = {
 
         push.on('registration', function(data) {
             console.log(data.registrationId);
-        });*/
+        });
         //======Push notifications on device ready ends
 
         var parentElement = document.getElementById(id);
@@ -167,7 +167,18 @@ var app = {
                 //=====Contacts find ends
 
                 //======Push notification register device id on click event
-                /*push.on('registration', function(data) {
+                /*push = PushNotification.init({
+                    android: {
+                        senderID: "362087841156"
+                    },
+                    ios: {
+                        alert: "false",
+                        badge: true,
+                        sound: 'false'
+                    },
+                    windows: {}
+                });
+                push.on('registration', function(data) {
                     console.log(data.registrationId);
 
                 });*/

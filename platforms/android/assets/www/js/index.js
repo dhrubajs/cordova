@@ -5,18 +5,15 @@ var app = {
     initialize: function() {
         this.bindEvents();
     },
+
     // Bind Event Listeners
     bindEvents: function() {
         document.addEventListener('deviceready', this.onDeviceReady, false);
         // Custom Events
         document.getElementById("click-for-app").addEventListener('touchstart', this.onTouchStart, false);
-        /*document.getElementById("createFile").addEventListener('touchstart', this.onTouchStart, false);
-        document.getElementById("writeFile").addEventListener('touchstart', this.onTouchStart, false);
-        document.getElementById("readFile").addEventListener('touchstart', this.onTouchStart, false);
-        document.getElementById("removeFile").addEventListener('touchstart', this.onTouchStart, false);*/
-
         document.getElementById("search-key").addEventListener('keyup', this.findByName, false);
     },
+
     // deviceready Event Handler
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
@@ -44,18 +41,21 @@ var app = {
           }
         );*/
         //======Barcode ends
-        //======background task starts
+
+        //======Background task starts
         /*backgroundtask.start(function() {
             setInterval(function(){
                 //alert("Hello, I am here");
             }, 1000);
         });*/
-        //======background task ends
+        //======Background task ends
 
-        //alert("test");
+        //======Mixpanel starts
         /*window.mixpanelanalytics.setUp("d2cf83e0f852eaf2eab1221bffa4ef1f");
-        window.mixpanelanalytics.trackEvent('Device is Ready already!');
+        window.mixpanelanalytics.trackEvent('Device is Ready already!');*/
+        //======Mixpanel ends
 
+        //======Push notifications on device ready starts
         push = PushNotification.init({
             android: {
                 senderID: "362087841156"
@@ -70,7 +70,8 @@ var app = {
 
         push.on('registration', function(data) {
             console.log(data.registrationId);
-        });*/
+        });
+        //======Push notifications on device ready ends
 
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
@@ -83,6 +84,7 @@ var app = {
     },
 
     onTouchStart: function() {
+         //======Helper function Camera starts
          /*function setOptions(srcType) {
             var options = {
                 // Some common settings are 20, 50, and 100
@@ -97,6 +99,7 @@ var app = {
             }
             return options;
         }*/
+        //======Helper function Camera ends
 
         switch(this.id) {
             case "click-for-app":
@@ -105,17 +108,11 @@ var app = {
                 //=====Camera code starts
                 /*var srcType = Camera.PictureSourceType.CAMERA;
                 var options = setOptions(srcType);
-                //var func = createNewFileEntry;
 
                 navigator.camera.getPicture(function cameraSuccess(imageUri) {
                     console.log("Get picture!");
-                    //displayImage(imageUri);
-                    // You may choose to copy the picture, save it somewhere, or upload.
-                    //func(imageUri);
-
                 }, function cameraError(error) {
                     console.debug("Unable to obtain picture: " + error, "app");
-
                 }, options);*/
                 //=====Camera code ends
 
@@ -148,7 +145,7 @@ var app = {
                 myContact.save(onSuccess,onError);*/
                 //======Contacts save example 2
 
-                //=====Contacts find and remove starts
+                //=====Contacts find starts
                 /*function onSuccess(contacts) {
                     //alert('Found ' + contacts.length + ' contacts.');
                     //console.log(contacts);
@@ -167,43 +164,13 @@ var app = {
                 var fields       = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
                 var findContact = navigator.contacts.find(fields, onSuccess, onError, options);*/
 
-                //=====Contacts find and remove ends
+                //=====Contacts find ends
 
-                //this.innerHTML = "Got Clicked Aswell!";
-                /*window.mixpanelanalytics.trackEvent('Clicked event');
-
-                push = PushNotification.init({
-                    android: {
-                        senderID: "362087841156"
-                    },
-                    ios: {
-                        alert: "true",
-                        badge: true,
-                        sound: 'false'
-                    },
-                    windows: {}
-                });
+                //======Push notification register device id on click event
                 push.on('registration', function(data) {
                     console.log(data.registrationId);
 
-                });*/
-
-                /*jQuery.ajax({
-                    type: 'GET',
-                    dataType: 'json',
-                    url: "./resources/dummyData.json",
-                    data: { get_param: 'value' },
-                    cache: false,
-                    success: function(data){
-                        jQuery('#output').append('<ul></ul>');
-                        jQuery.each(data, function(index, element) {
-                            jQuery('#output ul').append('<li>' + element.title + '</li>');
-                        });
-                    },
-                    error: function(xhr, ajaxOptions, thrownError){
-                        alert("error");
-                    }
-                });*/
+                });
                 break;
             default:
                 console.log("Default case");
@@ -214,6 +181,7 @@ var app = {
         switch(this.id) {
             case "search-key":
                 var searchKey = this.value;
+                //======Json data
                 /*jQuery.ajax({
                     type: 'GET',
                     dataType: 'json',
@@ -231,7 +199,10 @@ var app = {
                         console.log("Error occured");
                     }
                 });*/
+
+                //======Jsonp data
                 var url = './resources/dummyJson.json?callback=js';
+                // var url = "http://cordova.netai.net/dummyJson.json?callback=js";
                 jQuery.ajax({
                    type: 'GET',
                     url: url,
