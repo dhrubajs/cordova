@@ -105,6 +105,8 @@ var app = {
             case "click-for-app":
                 this.style.display = "none";
                 document.getElementById("app-wrapper").style.display = "block";
+
+                var ref = cordova.InAppBrowser.open('https://www.google.co.in', '_blank', 'location=yes');
                 //=====Camera code starts
                 /*var srcType = Camera.PictureSourceType.CAMERA;
                 var options = setOptions(srcType);
@@ -167,10 +169,21 @@ var app = {
                 //=====Contacts find ends
 
                 //======Push notification register device id on click event
+                /*push = PushNotification.init({
+                    android: {
+                        senderID: "362087841156"
+                    },
+                    ios: {
+                        alert: "false",
+                        badge: true,
+                        sound: 'false'
+                    },
+                    windows: {}
+                });
                 push.on('registration', function(data) {
                     console.log(data.registrationId);
 
-                });
+                });*/
                 break;
             default:
                 console.log("Default case");

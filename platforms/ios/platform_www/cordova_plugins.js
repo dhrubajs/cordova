@@ -188,6 +188,15 @@ module.exports = [
         "clobbers": [
             "cordova.plugins.barcodeScanner"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+        "id": "cordova-plugin-inappbrowser.inappbrowser",
+        "pluginId": "cordova-plugin-inappbrowser",
+        "clobbers": [
+            "cordova.InAppBrowser.open",
+            "window.open"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -204,7 +213,8 @@ module.exports.metadata =
     "cordova-plugin-camera": "2.2.0",
     "cordova-plugin-contacts": "2.1.0",
     "cordova-plugin-background-task": "0.2.0",
-    "phonegap-plugin-barcodescanner": "5.0.0"
+    "phonegap-plugin-barcodescanner": "5.0.0",
+    "cordova-plugin-inappbrowser": "1.4.0"
 }
 // BOTTOM OF METADATA
 });

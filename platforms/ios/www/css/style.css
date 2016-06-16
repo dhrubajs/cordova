@@ -1,5 +1,8 @@
-#clickMe {
+#click-for-app {
   padding-top: 20%;
+}
+#app-wrapper {
+  display: none;
 }
 .app-wrapper {
   top: 20%;

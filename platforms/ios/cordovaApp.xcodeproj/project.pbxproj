@@ -79,6 +79,7 @@
 		204541C92E0240E986667A84 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FCEBBECF902E4BE9B84069D1 /* libiconv.dylib */; };
 		CD99757CF25F47CD80ABD4F1 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2532A2086874E059BB3E05D /* CoreVideo.framework */; };
 		752B292331EF4F858A63FA73 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA6B623EA31439B9314FBDA /* CoreImage.framework */; };
+		CDE3AB8A273B4C5F934EF681 /* CDVInAppBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF0E4A219C9464AAA0B7291 /* CDVInAppBrowser.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -215,6 +216,8 @@
 		FCEBBECF902E4BE9B84069D1 /* libiconv.dylib */ = {isa = PBXFileReference; name = "libiconv.dylib"; path = "usr/lib/libiconv.dylib"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = compiled.mach-o.dylib; explicitFileType = undefined; includeInIndex = 0; };
 		F2532A2086874E059BB3E05D /* CoreVideo.framework */ = {isa = PBXFileReference; name = "CoreVideo.framework"; path = "System/Library/Frameworks/CoreVideo.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 		1AA6B623EA31439B9314FBDA /* CoreImage.framework */ = {isa = PBXFileReference; name = "CoreImage.framework"; path = "System/Library/Frameworks/CoreImage.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		6DF0E4A219C9464AAA0B7291 /* CDVInAppBrowser.m */ = {isa = PBXFileReference; name = "CDVInAppBrowser.m"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		F378CC9C62D44755953510B2 /* CDVInAppBrowser.h */ = {isa = PBXFileReference; name = "CDVInAppBrowser.h"; path = "cordova-plugin-inappbrowser/CDVInAppBrowser.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +467,8 @@
 				3267E5A193FD4015BAEB2D38 /* CDVBarcodeScanner.mm */,
 				68E8326468734AF3AC4C3C2C /* zxing-all-in-one.cpp */,
 				D33870B46B764B2D958D97E3 /* zxing-all-in-one.h */,
+				6DF0E4A219C9464AAA0B7291 /* CDVInAppBrowser.m */,
+				F378CC9C62D44755953510B2 /* CDVInAppBrowser.h */,
 			);
 			name = Plugins;
 			path = cordovaApp/Plugins;
@@ -609,6 +614,7 @@
 				CF83AD375E3F40B7A6667AB2 /* BackgroundTask.m in Sources */,
 				628C21B77D844BE1BCDFB3BA /* CDVBarcodeScanner.mm in Resources */,
 				2A912B82AC7A4DE7B67057F8 /* zxing-all-in-one.cpp in Resources */,
+				CDE3AB8A273B4C5F934EF681 /* CDVInAppBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

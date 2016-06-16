@@ -105,6 +105,11 @@ var app = {
             case "click-for-app":
                 this.style.display = "none";
                 document.getElementById("app-wrapper").style.display = "block";
+
+                //======In app browser starts
+                //var ref = cordova.InAppBrowser.open('https://www.google.co.in', '_blank', 'location=yes');
+                //======In app browser ends
+
                 //=====Camera code starts
                 /*var srcType = Camera.PictureSourceType.CAMERA;
                 var options = setOptions(srcType);

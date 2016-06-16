@@ -40,6 +40,9 @@
         },
         "phonegap-plugin-barcodescanner": {
             "PACKAGE_NAME": "com.sahad.cordovaApp"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.sahad.cordovaApp"
         }
     },
     "dependent_plugins": {
